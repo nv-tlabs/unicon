@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+  body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+<!-- Start : Google Analytics Code -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-64069893-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End : Google Analytics Code -->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+  <head>
+    <link rel="icon" type="image/png" href="../images/seal_icon.png">
+    <title>UniCon: Universal Neural Controller For Physics-based Character Motion</title>
+    <meta property="og:description" content="NerveNet: Learning Structured Policy with Graph Neural Networks.Tingwu Wang*, Renjie Liao{Two authors contribute equally.}, Jimmy Ba, Sanja Fidler"/>
+  </head>
+
+  <body>
+        <br>
+        <center>
+            <span style="font-size:46px;font-weight:bold;">
+                UniCon: Universal Neural Controller For &nbsp&nbsp&nbsp Physics-based Character Motion
+            </span>
+        </center>
+        <br>
+
+        <table align=center width=800px>
+          <tr>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="http://www.cs.toronto.edu/~tingwuwang">Tingwu Wang</a><sup>1,2,3</sup></span></center></td>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="https://www.linkedin.com/in/kelly-guo-18316982/">Yunrong Guo</a><sup>1</sup></span></center></td>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="http://shumash.com/">Maria Shugrina</a><sup>1,2,3</sup></span></center></td>
+            <td align=center width=100px>
+            </center><span style="font-size:24px"><a href="www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></span></center></td>
+          <tr/>
+        </table>
+        <table align=center width=600px>
+          <tr>
+            <td align=center width=500px><center>
+                    <span style="font-size:24px">Nvidia<sup>1</sup> &nbsp;&nbsp; &amp; &nbsp;&nbsp; University of Toronto<sup>2</sup>&nbsp;&nbsp; &amp; &nbsp;&nbsp;Vector Institute<sup>3</sup></span>
+                </center>
+            </td>
+          <tr/>
+        </table>
+        </center>
+        <br>
+
+        <table align=center width=950px>
+            <center>
+          <tr><td width=950px>
+            <a href="./resources/teaser6.png"><img class="rounded" src = "./resources/teaser6.png" width="950px"></img></a><br>
+          </td></tr></center>
+        </table>
+
+        <br>
+        The field of physics-based animation is gaining importance due to the increasing demand for realism in video games and films, and has recently seen wide adoption of data-driven techniques, such as deep reinforcement learning (RL), which learn control from (human) demonstrations. While RL has shown impressive results at reproducing individual motions and interactive locomotion, existing methods are limited in their ability to generalize to new motions and their ability to compose a complex motion sequence interactively. In this paper, we propose a physics-based universal neural controller (UniCon) that learns to master thousands of motions with different styles by learning on large-scale motion datasets. UniCon is a two-level framework that consists of a high-level motion scheduler and an RL-powered low-level motion executor, which is our key innovation. By systematically analyzing existing multi-motion RL frameworks, we introduce a novel objective function and training techniques which make a significant leap in performance. Once trained, our motion executor can be combined with different high-level schedulers without the need to retrain, enabling a variety of real-time interactive applications. We show that UniCon can support keyboard-driven control, compose motion sequences drawn from a large pool of locomotion and acrobatics skills and teleport a person captured on video to a physics-based virtual avatar. Numerical and qualitative results demonstrate a significant improvement in efficiency, robustness and generalizability of UniCon over prior state-of-the-art.
+        <br>
+        <br>
+      <hr>
+      <center id="sourceCode"><h1>Demo Video and Overview</h1></center>
+          <table width="800px" align="center">
+          <tbody><tr><td width="800px" align="center">
+                      <video width="800" controls>
+                          <source src="./resources/update_sep_21.mp4" type="video/mp4"/>
+                      </video>
+                      <br><br><br>
+                      <a><img class="rounded" src = "./resources/overview.png" width="800px"></img></a>
+                  </td></tr>
+          </tbody></table>
+          <br>
+          Overview Figure: Our model consists of (right) an RL-powered low-level motion executor that is able to physically animate a given (non-physically plausible) sequence of target motion frames. The low-level motion executor can work in conjunction with a plethora of (left) high-level motion schedulers which produce target motion frames.
+
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Keyboard Driven Interactive Control</h1></center>
+        We use phase-functioned neural networks (PFNN) to process the keyboard commands and generate future states. One can control the walking direction of the agent, and choose the walking style from walking, jogging, crouching, etc.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/keyboard_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/keyboard_snap.png" width="900px"></img></a><br></center>
+        </table>
+        Snapshots of the keyboard driven interactive control application.  On the left is the target agent states, and on the right, the yellow agents represent ones that are physically simulated by our algorithm.  Note that our controller is real-time responsive to keyboard commands.  
+
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Interactive Video Controlled Animation</h1></center>
+        We show how our algorithm can be used to real-time teleport the motions captured from a remote host, to its physics-based avatars in the simulated environment.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/video_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/video_snap.png" width="900px"></img></a><br></center>
+        </table>
+
+        In the snapshots, we show how our controller reacts real-time to the remote host captured by a camera. It successfully reproduces waving, walking, turning and jumping behaviors.
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Interactive Motion Stitching</h1></center>
+
+        We also show the results where we randomly select a motion from a motion dataset,
+        which our algorithm will respond to real time.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/stitching_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/stitching_snap.png" width="900px"></img></a><br></center>
+        </table>
+        Snapshots of interactive motion stitching with unseen motions.
+        Our controller can react real-time to generate getting up, walking and boxing behaviors.
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Zeroshot Robustness</h1></center>
+        In this project, we introduce zero-shot robustness, where the
+agent never sees the perturbation or retargeting information during
+training, and is asked to perform tasks under perturbations or using
+different humanoid models with varying masses. We argue that a robust controller with the ability to combat unseen perturbations and retargeting problems will have a much broader potential for real-life applications.<br>
+(1) Zeroshot Speed Adaptation<br>
+(2) Zeroshot Projectile Resistance<br>
+(3) Zeroshot Model Retargeting<br><br>
+
+        <table align=center width=950px>
+          <tr><td width=950px>
+                  <center><a><img class="rounded" src = "./resources/zeroshot_robustness.png" width="950px"></img></a><br></center><br>
+                  <center><a><img class="rounded" src = "./resources/robustness_snap.png" width="950px"></img></a><br></center>
+          </td></tr>
+        </table>
+      <br>
+
+      <hr>
+        <center id="sourceCode"><h1>Numerical Comparison</h1></center>
+
+        <table align=center width=900px>
+            <center><a><img class="rounded" src="./resources/train_performance.png" width="900px"></img></a><br></center>
+        </table>
+            The numerical training performance for our algorithm and baselines. We show the average sum of reward per episode. Our algorithm obtains better sample efficiency and performance.
+            <br>
+            <center>
+        <table align=center width=900px>
+            <tr>
+                <td>
+            <a><img class="rounded" src="./resources/test_performance.png" width="430px"></img></a><br>
+                </td>
+                <td>
+            <a><img class="rounded" src="./resources/transfer_performance.png" width="456px"></img></a><br>
+                </td>
+            </tr>
+        </table>
+            </center>
+            The numerical testing and transfer learning performance for our algorithm and baselines. We show that UniCon is having better performance, indicating it learns transferable features and does not overfit.
+      <br>
+      <hr>
+
+        <table align=center width=850px>
+          <center><h1>Paper</h1></center>
+          <tr>
+          <td width=400px align=left>
+          <!-- <p style="margin-top:4px;"></p> -->
+          <a href='./resources/main_sept_21.pdf'><img style="height:400px" src="./resources/main_paper.png"/></a>
+          <center>
+              <span style="font-size:20pt"><a href='./resources/main_sept_21.pdf'>[Paper 8.2MB]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </center>
+          </td>
+          <td width=50px align=center>
+          </td>
+          <td width=450px align=left>
+          <!-- <p style="margin-top:4px;"></p> -->
+            <p style="text-align:left;">
+                <b><span style="font-size:20pt">Citation</span></b>
+                <br/><span style="font-size:6px;">&nbsp;<br/></span>
+                <span style="font-size:15pt">
+                    Tingwu Wang, Yunrong Guo, Maria Shugrina and Sanja Fidler.
+                    <br><br>
+                    <b>
+                        UniCon: Universal Neural Controller For Physics-based Character Motion
+                    </b>
+                </span>
+            </p>
+          </td>
+          </tr>
+          <tr>
+          <td width=350px align=left>
+          </td>
+          <td width=100px align=center>
+          </td>
+          <td width=450px align=left>
+            </td>
+            </tr>
+        </table>
+      <br>
+      <hr>
+
+      <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
+          <tbody><tr><td><br><p align="right"><font size="2">
+                          Last update: Sept, 2020<br>
+                          web page template: <a href="https://pathak22.github.io/noreward-rl/">this</a>
+                      </font></p></td></tr>
+          </tbody></table>
+
+</body>
+</html>
+
