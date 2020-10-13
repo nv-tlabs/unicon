@@ -139,13 +139,13 @@
         <table align=center width=800px>
           <tr>
             <td align=center width=100px>
-            <center><span style="font-size:24px"><a href="http://www.cs.toronto.edu/~tingwuwang">Tingwu Wang</a><sup>1,2,3</sup></span></center></td>
+            <center><span style="font-size:24px"><a href="https://www.cs.toronto.edu/~tingwuwang">Tingwu Wang</a><sup>1,2,3</sup></span></center></td>
             <td align=center width=100px>
             <center><span style="font-size:24px"><a href="https://www.linkedin.com/in/kelly-guo-18316982/">Yunrong Guo</a><sup>1</sup></span></center></td>
             <td align=center width=100px>
-            <center><span style="font-size:24px"><a href="http://shumash.com/">Maria Shugrina</a><sup>1,2,3</sup></span></center></td>
+            <center><span style="font-size:24px"><a href="https://shumash.com/">Maria Shugrina</a><sup>1,2,3</sup></span></center></td>
             <td align=center width=100px>
-            </center><span style="font-size:24px"><a href="www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></span></center></td>
+            </center><span style="font-size:24px"><a href="https://www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></span></center></td>
           <tr/>
         </table>
         <table align=center width=600px>
@@ -170,114 +170,6 @@
         The field of physics-based animation is gaining importance due to the increasing demand for realism in video games and films, and has recently seen wide adoption of data-driven techniques, such as deep reinforcement learning (RL), which learn control from (human) demonstrations. While RL has shown impressive results at reproducing individual motions and interactive locomotion, existing methods are limited in their ability to generalize to new motions and their ability to compose a complex motion sequence interactively. In this paper, we propose a physics-based universal neural controller (UniCon) that learns to master thousands of motions with different styles by learning on large-scale motion datasets. UniCon is a two-level framework that consists of a high-level motion scheduler and an RL-powered low-level motion executor, which is our key innovation. By systematically analyzing existing multi-motion RL frameworks, we introduce a novel objective function and training techniques which make a significant leap in performance. Once trained, our motion executor can be combined with different high-level schedulers without the need to retrain, enabling a variety of real-time interactive applications. We show that UniCon can support keyboard-driven control, compose motion sequences drawn from a large pool of locomotion and acrobatics skills and teleport a person captured on video to a physics-based virtual avatar. Numerical and qualitative results demonstrate a significant improvement in efficiency, robustness and generalizability of UniCon over prior state-of-the-art.
         <br>
         <br>
-      <hr>
-      <center id="sourceCode"><h1>Demo Video and Overview</h1></center>
-      <table width="800px" align="center">
-          <tbody>
-              <tr>
-                  <td width="800px" align="center">
-                      <video width="800" controls>
-                          <source src="./resources/teaser.mp4" type="video/mp4"/>
-                      </video>
-                      <span style="font-size:20pt"> 30-second teaser video </span>
-                      <br><br>
-                  </td>
-              </tr>
-              <tr>
-                  <td width="800px" align="center">
-                      <video width="800" controls>
-                          <source src="./resources/main_demo.mp4" type="video/mp4"/>
-                      </video>
-                      <span style="font-size:20pt"> Full 4-min demo </span>
-                      <br><br>
-                  </td>
-              </tr>
-              <tr>
-                  <td width="800px" align="center">
-                      <a><img class="rounded" src = "./resources/overview.png" width="800px"></img></a>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-      <br>
-      Overview Figure: Our model consists of (right) an RL-powered low-level motion executor that is able to physically animate a given (non-physically plausible) sequence of target motion frames. The low-level motion executor can work in conjunction with a plethora of (left) high-level motion schedulers which produce target motion frames.
-
-      <br>
-      <hr>
-        <center id="sourceCode"><h1>Keyboard Driven Interactive Control</h1></center>
-        We use phase-functioned neural networks (PFNN) to process the keyboard commands and generate future states. One can control the walking direction of the agent, and choose the walking style from walking, jogging, crouching, etc.<br><br>
-
-        <table align=center width=800px>
-            <center><a><img class="rounded" src = "./resources/keyboard_overview.png" width="600px"></img></a><br></center><br>
-            <center><a><img class="rounded" src = "./resources/keyboard_snap.png" width="900px"></img></a><br></center>
-        </table>
-        Snapshots of the keyboard driven interactive control application.  On the left is the target agent states, and on the right, the yellow agents represent ones that are physically simulated by our algorithm.  Note that our controller is real-time responsive to keyboard commands.  
-
-      <br>
-      <hr>
-        <center id="sourceCode"><h1>Interactive Video Controlled Animation</h1></center>
-        We show how our algorithm can be used to real-time teleport the motions captured from a remote host, to its physics-based avatars in the simulated environment.<br><br>
-
-        <table align=center width=800px>
-            <center><a><img class="rounded" src = "./resources/video_overview.png" width="600px"></img></a><br></center><br>
-            <center><a><img class="rounded" src = "./resources/video_snap.png" width="900px"></img></a><br></center>
-        </table>
-
-        In the snapshots, we show how our controller reacts real-time to the remote host captured by a camera. It successfully reproduces waving, walking, turning and jumping behaviors.
-      <br>
-      <hr>
-        <center id="sourceCode"><h1>Interactive Motion Stitching</h1></center>
-
-        We also show the results where we randomly select a motion from a motion dataset,
-        which our algorithm will respond to real time.<br><br>
-
-        <table align=center width=800px>
-            <center><a><img class="rounded" src = "./resources/stitching_overview.png" width="600px"></img></a><br></center><br>
-            <center><a><img class="rounded" src = "./resources/stitching_snap.png" width="900px"></img></a><br></center>
-        </table>
-        Snapshots of interactive motion stitching with unseen motions.
-        Our controller can react real-time to generate getting up, walking and boxing behaviors.
-      <br>
-      <hr>
-        <center id="sourceCode"><h1>Zeroshot Robustness</h1></center>
-        In this project, we introduce zero-shot robustness, where the
-agent never sees the perturbation or retargeting information during
-training, and is asked to perform tasks under perturbations or using
-different humanoid models with varying masses. We argue that a robust controller with the ability to combat unseen perturbations and retargeting problems will have a much broader potential for real-life applications.<br>
-(1) Zeroshot Speed Adaptation<br>
-(2) Zeroshot Projectile Resistance<br>
-(3) Zeroshot Model Retargeting<br><br>
-
-        <table align=center width=950px>
-          <tr><td width=950px>
-                  <center><a><img class="rounded" src = "./resources/zeroshot_robustness.png" width="950px"></img></a><br></center><br>
-                  <center><a><img class="rounded" src = "./resources/robustness_snap.png" width="950px"></img></a><br></center>
-          </td></tr>
-        </table>
-      <br>
-
-      <hr>
-        <center id="sourceCode"><h1>Numerical Comparison</h1></center>
-
-        <table align=center width=900px>
-            <center><a><img class="rounded" src="./resources/train_performance.png" width="900px"></img></a><br></center>
-        </table>
-            The numerical training performance for our algorithm and baselines. We show the average sum of reward per episode. Our algorithm obtains better sample efficiency and performance.
-            <br>
-            <center>
-        <table align=center width=900px>
-            <tr>
-                <td>
-            <a><img class="rounded" src="./resources/test_performance.png" width="430px"></img></a><br>
-                </td>
-                <td>
-            <a><img class="rounded" src="./resources/transfer_performance.png" width="456px"></img></a><br>
-                </td>
-            </tr>
-        </table>
-            </center>
-            The numerical testing and transfer learning performance for our algorithm and baselines. We show that UniCon is having better performance, indicating it learns transferable features and does not overfit.
-      <br>
       <hr>
 
         <table align=center width=850px>
@@ -317,8 +209,124 @@ different humanoid models with varying masses. We argue that a robust controller
             </tr>
         </table>
       <br>
-      <hr>
 
+      <hr>
+      <center id="sourceCode"><h1>Demo Video and Overview</h1></center>
+      <table width="800px" align="center">
+          <tbody>
+              <tr>
+                  <td width="800px" align="center">
+                      <video width="800" controls>
+                          <source src="./resources/teaser.mp4" type="video/mp4"/>
+                      </video>
+                      <span style="font-size:20pt"> 30-second teaser video </span>
+                      <br><br>
+                  </td>
+              </tr>
+              <tr>
+                  <td width="800px" align="center">
+                      <video width="800" controls>
+                          <source src="./resources/main_demo.mp4" type="video/mp4"/>
+                      </video>
+                      <span style="font-size:20pt"> Full 4-min demo </span>
+                      <br><br>
+                  </td>
+              </tr>
+              <tr>
+                  <td width="800px" align="center">
+                      <a><img class="rounded" src = "./resources/overview.png" width="800px"></img></a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <br>
+      Overview Figure: Our model consists of (right) an RL-powered low-level motion executor that is able to physically animate a given (non-physically plausible) sequence of target motion frames. The low-level motion executor can work in conjunction with a plethora of (left) high-level motion schedulers which produce target motion frames.
+
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Zeroshot Robustness</h1></center>
+        In this project, we introduce zero-shot robustness, where the
+agent never sees the perturbation or retargeting information during
+training, and is asked to perform tasks under perturbations or using
+different humanoid models with varying masses. We argue that a robust controller with the ability to combat unseen perturbations and retargeting problems will have a much broader potential for real-life applications.<br>
+(1) Zeroshot <span style="font-weight:bolder"> <b>Speed Adaptation</b> </span> <br>
+(2) Zeroshot <span style="font-weight:bolder"> <b>Projectile Resistance</b> </span><br>
+(3) Zeroshot <span style="font-weight:bolder"> <b>Model Retargeting</b> </span><br>
+<br>
+        <table align=center width=950px>
+          <tr><td width=950px>
+                  <center><a><img class="rounded" src = "./resources/zeroshot_robustness.png" width="950px"></img></a><br></center><br>
+          </td></tr>
+        </table>
+        In this table we show the zero-shot robustness of UniCon compared with DeepMimic. The keyword "Speed" represents the
+experiments where we modify the speed of the reference motion with certain ratio, and "Proj" represents the experiments where we modify how frequently the
+projectiles are thrown at the agents (i. e. how many time-steps there are between two projectiles are thrown at the agent). "heavy" and "light" represent the
+two experiments where we use different humanoid models. In the table we show the relative performance compared to the original performance.
+<br>
+        <table align=center width=950px>
+          <tr><td width=950px>
+                  <center><a><img class="rounded" src = "./resources/robustness_snap.png" width="950px"></img></a><br></center>
+          </td></tr>
+        </table>
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Keyboard Driven Interactive Control</h1></center>
+        We use phase-functioned neural networks (PFNN) to process the keyboard commands and generate future states. One can control the walking direction of the agent, and choose the walking style from walking, jogging, crouching, etc.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/keyboard_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/keyboard_snap.png" width="900px"></img></a><br></center>
+        </table>
+        Snapshots of the keyboard driven interactive control application.  On the left is the target agent states, and on the right, the yellow agents represent ones that are physically simulated by our algorithm.  Note that our controller is real-time responsive to keyboard commands.  
+
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Interactive Video Controlled Animation</h1></center>
+        We show how our algorithm can be used to real-time teleport the motions captured from a remote host, to its physics-based avatars in the simulated environment.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/video_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/video_snap.png" width="900px"></img></a><br></center>
+        </table>
+
+        In the snapshots, we show how our controller reacts real-time to the remote host captured by a camera. It successfully reproduces waving, walking, turning and jumping behaviors.
+      <br>
+      <hr>
+        <center id="sourceCode"><h1>Interactive Motion Stitching</h1></center>
+
+        We also show the results where we randomly select a motion from a motion dataset,
+        which our algorithm will respond to real time.<br><br>
+
+        <table align=center width=800px>
+            <center><a><img class="rounded" src = "./resources/stitching_overview.png" width="600px"></img></a><br></center><br>
+            <center><a><img class="rounded" src = "./resources/stitching_snap.png" width="900px"></img></a><br></center>
+        </table>
+        Snapshots of interactive motion stitching with unseen motions.
+        Our controller can react real-time to generate getting up, walking and boxing behaviors.
+      <br>
+
+      <hr>
+        <center id="sourceCode"><h1>Numerical Comparison</h1></center>
+
+        <table align=center width=900px>
+            <center><a><img class="rounded" src="./resources/train_performance.png" width="900px"></img></a><br></center>
+        </table>
+            The numerical training performance for our algorithm and baselines. We show the average sum of reward per episode. Our algorithm obtains better sample efficiency and performance.
+            <br>
+            <center>
+        <table align=center width=900px>
+            <tr>
+                <td>
+            <a><img class="rounded" src="./resources/test_performance.png" width="430px"></img></a><br>
+                </td>
+                <td>
+            <a><img class="rounded" src="./resources/transfer_performance.png" width="456px"></img></a><br>
+                </td>
+            </tr>
+        </table>
+            </center>
+            The numerical testing and transfer learning performance for our algorithm and baselines. We show that UniCon is having better performance, indicating it learns transferable features and does not overfit.
+      <br>
       <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
           <tbody><tr><td><br><p align="right"><font size="2">
                           Last update: Sept, 2020<br>
