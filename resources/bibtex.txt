@@ -1,0 +1,8 @@
+@misc{wang2020unicon,
+      title={UniCon: Universal Neural Controller For Physics-based Character Motion}, 
+      author={Tingwu Wang and Yunrong Guo and Maria Shugrina and Sanja Fidler},
+      year={2020},
+      eprint={2011.15119},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR}
+}
